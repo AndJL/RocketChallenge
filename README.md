@@ -24,5 +24,7 @@ Reason to use Azure as the host is to use the Azure auto scaling functions that 
 
 ## Comments 
 I've decided that exception handling is currently out of scope for this assignment, but should in a producation enviroment be implemented.
+
 Also in the 'GetRocketStateService' class i've decided not to go further into implementing an update case for the state if the state has run out of sync.
+
 First time programmering something using mongoDB transactions which has been alittle tricky, but I think it worked out in the end ;)
