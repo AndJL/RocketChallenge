@@ -12,6 +12,9 @@ On Azure: https://func-rocketchallenge.azurewebsites.net/
 - /api/messages:
   - Endpoint to recieve incoming messages from rockets.
 
+- /api/reset:
+   - To reset the system (Delete all rocket messages and rocketStates) Cannot be undone!
+
 ## How it works
 1. After recieve a rocket message the azure function inserts the event into the eventstore and puts an event into the azure servicebus queue.
 2. Another azure function then reacts to messages in the servicebus queue and determines which command to fire onwards.
