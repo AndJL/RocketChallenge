@@ -1,0 +1,11 @@
+{
+    "IsEncrypted": false,
+  "Values": {
+    "AzureWebJobsStorage": "UseDevelopmentStorage=true",
+    "FUNCTIONS_WORKER_RUNTIME": "dotnet",
+    "MongoDBConnectionString": "mongodb+srv://challenge-user:cbfbxhbSrH4wr34X@cluster0.4fb5tds.mongodb.net/?retryWrites=true&w=majority",
+    "DBName": "lunar_challenge",
+    "event-queue": "rocket-message-queue",
+    "ServiceBusConnectionString": "Endpoint=sb://lunar-challenge.servicebus.windows.net/;SharedAccessKeyName=RootManageSharedAccessKey;SharedAccessKey=10Ap5iRpACv8mZkARx+Pe/3X2aD2sKmBbHZn3HvcE+o="
+  }
+}
