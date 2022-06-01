@@ -1,7 +1,10 @@
 # Rocket Challenge App built on Azure Functions with MongoDb transactions
 
 ## Endpoints
-### baseUrl {azure endpoint}
+### baseUrl
+If run locally baseurl should be: http://localhost:7071
+On Azure: https://func-rocketchallenge.azurewebsites.net/
+
 - /api/rockets: 
    - Gives a list of all Rockets.
 - /api/rocketState/{rocketId}/{extended}: 
