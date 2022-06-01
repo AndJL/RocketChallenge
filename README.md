@@ -5,14 +5,14 @@
 If run locally baseurl should be: http://localhost:7071
 On Azure: https://func-rocketchallenge.azurewebsites.net/
 
-- /api/rockets: 
+- GET /api/rockets: 
    - Gives a list of all Rockets.
-- /api/rocketState/{rocketId}/{extended}: 
+- GET /api/rocketState/{rocketId}/{extended}: 
    - Gets a rockets current state(its eventually consistent). Use true/false as "extended" parameter to get the recieved rocketMessages for debugging purposes.
-- /api/messages:
+- POST /api/messages:
   - Endpoint to recieve incoming messages from rockets.
 
-- /api/reset:
+- POST /api/reset:
    - To reset the system (Delete all rocket messages and rocketStates) Cannot be undone!
 
 ## How it works
