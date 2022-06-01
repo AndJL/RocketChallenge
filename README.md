@@ -1,6 +1,6 @@
 # Rocket Challenge App built on Azure Functions with MongoDb transactions
 
-## Endpoints:
+## Endpoints
 ### baseUrl {azure endpoint}
 - /api/rockets: 
    - Gives a list of all Rockets.
