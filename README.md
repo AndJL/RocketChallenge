@@ -1,4 +1,4 @@
-# Rocket Challenge App built on Azure Functions with MongoDb transactions
+# Rocket Challenge App built on Azure Functions with MongoDb transactions, written in C#
 
 ## Endpoints
 ### baseUrl
@@ -33,4 +33,22 @@ I've decided that exception handling is currently out of scope for this assignme
 
 Also in the 'GetRocketStateService' class i've decided not to go further into implementing an update case for the state if the state has run out of sync.
 
-First time programmering something using mongoDB transactions which has been alittle tricky, but I think it worked out in the end ;)
+## Consideration
+The very simplified way to determine if a rocketstate should be updated, needs to be made better for a real world application.
+
+Consider having a list of 3 messages incoming. As the assignment suggest, we cant be sure that the messages are coming in the correct order.
+Having a list of 3 messages (For simplication we work with numbers, see below):
+
+Message List: [ 2 , 1 , 3 ]
+
+Looking at the implementation, we would assume that the first message (2) would not be updated to the rocketstate because there isn't a rocketstate to start with.
+Also the messagenumber: 2, is greater than 1 and would return a false in method 'HasRocketBeenLaunchedAlready' in 'RocketLaunchedCommand.cs'
+
+We would go on to the second message (1), and seeing that this is in fact the first datapoint from the rocket, and it would create the rocketstate.
+
+The last message would be read, and the rocketstate would be updated with the third message (3).
+
+So we end up having message two (1) and three (3), updated to the rocketstate and message 1 (2) gone from the state.
+RocketState ends up being inconsistent which is not what we want :/ 
+
+
